@@ -2,10 +2,16 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotos Mágicas - Mesversário e Infantil</title>
+    <!-- A tag viewport abaixo é crucial para o mobile funcionar e rolar corretamente -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fotos Mágicas - Newborn, Mês Versário e Aniversário</title>
     
-    <!-- SUBSTITUA OS ZEROS ABAIXO PELO SEU ID DO PIXEL DO FACEBOOK -->
+    <!-- Importando uma fonte fofa e moderna do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- ===== PIXEL DO FACEBOOK ===== -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,192 +25,296 @@
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=0000000000000000&ev=PageView&noscript=1"/></noscript>
-    <!-- FIM DO PIXEL DO FACEBOOK -->
+    <!-- ===== FIM DO PIXEL ===== -->
 
     <style>
-        /* CSS: Aqui deixamos a página fofa e animada! */
-        body {
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
-            background-color: #fff0f5; /* Rosa bem clarinho */
-            color: #555;
-            text-align: center;
+        /* Reset básico para evitar problemas de rolagem e tamanhos */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        /* Fundo com gradiente suave e quebra de texto inteligente */
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: #4a4a4a;
+            line-height: 1.6;
+            word-wrap: break-word; /* Quebra de texto inteligente */
             padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        /* Cartão principal sofisticado */
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 3px solid #ffd1dc; /* Bordinha rosa */
+            background-color: #ffffff;
+            max-width: 550px;
+            width: 100%;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra suave */
         }
+
         h1 {
-            color: #ff69b4;
-            animation: bounce 2s infinite; /* Animação simples no título */
+            color: #ff8fb3;
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 10px;
         }
-        p { font-size: 16px; line-height: 1.5; }
-        .promo-text {
-            background-color: #fffacd; /* Amarelinho */
-            padding: 10px;
-            border-radius: 10px;
-            font-weight: bold;
-            color: #d2691e;
+
+        .subtitle {
+            text-align: center;
+            font-size: 15px;
+            color: #7a7a7a;
+            margin-bottom: 25px;
         }
+
         .image-preview {
             width: 100%;
-            border-radius: 15px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Estilização dos campos do formulário */
+        .form-group {
             margin-bottom: 20px;
         }
-        /* Estilos do Formulário */
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
+
+        label {
+            font-weight: 600;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
         }
-        label { font-weight: bold; color: #ff69b4; display: block; margin-bottom: 5px;}
-        input, select {
+
+        .obs-text {
+            font-size: 13px;
+            color: #999;
+            display: block;
+            margin-top: 4px;
+        }
+
+        input {
             width: 100%;
-            padding: 10px;
-            border: 2px solid #ffd1dc;
-            border-radius: 10px;
-            box-sizing: border-box;
-            font-size: 16px;
+            padding: 14px;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Nunito', sans-serif;
+            transition: border-color 0.3s ease;
+            color: #333;
         }
+
+        input:focus {
+            outline: none;
+            border-color: #ff8fb3;
+        }
+
+        /* Controles de Quantidade */
         .qty-controls {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 15px;
+            background: #fcfcfc;
+            padding: 10px;
+            border-radius: 16px;
+            border: 2px solid #f0f0f0;
         }
+
         .btn-qty {
-            background-color: #ff69b4;
-            color: white;
+            background-color: #ffe6f0;
+            color: #ff8fb3;
             border: none;
-            padding: 10px 20px;
-            font-size: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .btn-qty:hover { background-color: #ff1493; }
-        
-        #total-price {
+            width: 45px;
+            height: 45px;
             font-size: 24px;
-            color: #32cd32; /* Verde */
-            font-weight: bold;
-            margin: 20px 0;
+            font-weight: 800;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
+
+        .btn-qty:hover {
+            background-color: #ff8fb3;
+            color: white;
+        }
+
+        #quantidade {
+            border: none;
+            width: 60px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 800;
+            color: #ff8fb3;
+            background: transparent;
+        }
+
+        /* Bloco de Resumo Automático */
+        .resumo-pedido {
+            background: #f8fbff;
+            border: 2px dashed #bcdcff;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        #total-price {
+            font-size: 28px;
+            color: #4CAF50;
+            font-weight: 800;
+        }
+
+        #prazo-entrega {
+            font-size: 15px;
+            color: #618bb9;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Botões de Ação */
         .btn-submit {
-            background-color: #20b2aa;
+            background: linear-gradient(135deg, #ff8fb3 0%, #ff6b98 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 16px;
             font-size: 18px;
-            border-radius: 10px;
+            border-radius: 14px;
             cursor: pointer;
             width: 100%;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 800;
+            font-family: 'Nunito', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 107, 152, 0.3);
         }
-        .btn-submit:hover { background-color: #008b8b; }
-        
-        /* Botão do whats escondido inicialmente */
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 152, 0.4);
+        }
+
+        .btn-submit:disabled {
+            background: #cccccc;
+            box-shadow: none;
+            transform: none;
+            cursor: not-allowed;
+        }
+
+        /* Seção do WhatsApp */
         #whatsapp-section {
             display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px dashed #ffd1dc;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
         }
+
+        #whatsapp-section h3 {
+            color: #4CAF50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        #whatsapp-section p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
         .btn-whatsapp {
-            background-color: #25d366;
+            background: linear-gradient(135deg, #25D366 0%, #1da851 100%);
             color: white;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 16px;
             font-size: 18px;
-            border-radius: 10px;
-            display: inline-block;
-            font-weight: bold;
-            animation: pulse 1.5s infinite;
+            border-radius: 14px;
+            display: block;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
         }
-        
-        /* Animações */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Transforme a foto do seu bebê! 📸✨</h1>
+    <h1>Transforme fotos em momentos mágicos!</h1>
+    <p class="subtitle">Especialistas em Newborn, Mês Versário, Aniversário e Temáticas. Estúdio profissional sem sair de casa.</p>
     
-    <!-- COLOQUE O LINK DA SUA IMAGEM DO GITHUB AQUI NO SRC -->
-    <img src="https://raw.githubusercontent.com/LucianaGmartins/FOTOSIA/refs/heads/main/FOTO2.png" alt="Exemplos de Mês Versário" class="image-preview">
-    
-    <p>Foto de estúdio sem sair de casa! Escolha o tema, envie a foto do seu bebê e receba uma arte mágica em até 24h.</p>
-    
-    <div class="promo-text">
-        🎁 Promoção Especial!<br>
-        1 foto = R$ 5,00<br>
-        2 a 4 fotos = R$ 4,50/cada<br>
-        5 a 20 fotos = R$ 3,50/cada<br>
-        + de 20 fotos = R$ 3,00/cada
-    </div>
+    <!-- COLOQUE O LINK DA SUA IMAGEM AQUI -->
+    <img src="https://raw.githubusercontent.com/LucianaGmartins/FOTOSIA/refs/heads/main/FOTO2.png" alt="Exemplos de Fotos" class="image-preview">
 
     <form id="orderForm">
         <div class="form-group">
             <label>Nome da Mamãe/Papai:</label>
             <input type="text" id="nome" required placeholder="Ex: Maria Silva">
         </div>
+        
         <div class="form-group">
             <label>WhatsApp (com DDD):</label>
             <input type="tel" id="telefone" required placeholder="Ex: 11999999999">
         </div>
+        
         <div class="form-group">
             <label>Email:</label>
             <input type="email" id="email" required placeholder="Ex: maria@email.com">
         </div>
+        
         <div class="form-group">
             <label>Qual o tema desejado?</label>
-            <input type="text" id="tema" required placeholder="Ex: Safari, Astronauta, Moana...">
+            <input type="text" id="tema" required placeholder="Ex: Safari, Astronauta, Newborn Clássico...">
+            <span class="obs-text">Obs: Se escolher mais de uma foto, você pode escolher mais de um tema.</span>
         </div>
         
         <div class="form-group">
-            <label>Quantas fotos deseja?</label>
+            <label style="text-align: center;">Quantas fotos deseja?</label>
             <div class="qty-controls">
                 <button type="button" class="btn-qty" onclick="mudarQtd(-1)">-</button>
-                <input type="number" id="quantidade" value="1" min="1" readonly style="width: 60px; text-align: center; font-size: 20px;">
+                <input type="number" id="quantidade" value="1" min="1" readonly>
                 <button type="button" class="btn-qty" onclick="mudarQtd(1)">+</button>
             </div>
         </div>
 
-        <div id="total-price">Total: R$ 5,00</div>
+        <div class="resumo-pedido">
+            <div id="total-price">Total: R$ 5,00</div>
+            <div id="prazo-entrega">Prazo de entrega: até 24 horas</div>
+        </div>
 
         <button type="submit" class="btn-submit" id="btn-confirmar">Confirmar Pedido</button>
     </form>
 
     <div id="whatsapp-section">
-        <h3>Pedido confirmado! 🎉</h3>
-        <p>Clique no botão abaixo para me enviar a foto do bebê e finalizar no WhatsApp!</p>
-        <a href="#" id="link-whatsapp" class="btn-whatsapp" target="_blank">📲 Falar no WhatsApp</a>
+        <h3>Pedido Reservado!</h3>
+        <p>Falta só mais um detalhe!<br>Clique abaixo para me chamar no WhatsApp. Por lá, você vai me enviar as fotos da criança e realizar o pagamento para iniciarmos a edição.</p>
+        <a href="#" id="link-whatsapp" class="btn-whatsapp" target="_blank">Finalizar no WhatsApp</a>
     </div>
 
 </div>
 
 <script>
-    // JS: O "cérebro" da nossa página
-
-    // Variável para armazenar o valor total atualizado
+    // Variáveis globais para armazenar os cálculos
     let valorTotalCalculado = 5.00;
+    let prazoTextoGlobal = "até 24 horas";
 
-    // Função para atualizar a quantidade e o preço
+    // Função para adicionar ou remover quantidade
     function mudarQtd(valor) {
         let inputQtd = document.getElementById('quantidade');
         let qtdAtual = parseInt(inputQtd.value);
@@ -212,15 +322,16 @@
         
         if(novaQtd >= 1) {
             inputQtd.value = novaQtd;
-            calcularTotal();
+            calcularValores();
         }
     }
 
-    // Função que aplica a regra de descontos
-    function calcularTotal() {
+    // Função que aplica a regra de descontos e define o prazo de entrega
+    function calcularValores() {
         let qtd = parseInt(document.getElementById('quantidade').value);
-        let precoPorFoto = 5.00; // Padrão para 1 foto
+        let precoPorFoto = 5.00;
 
+        // Regra de Preços
         if (qtd > 1 && qtd < 5) {
             precoPorFoto = 4.50;
         } else if (qtd >= 5 && qtd <= 20) {
@@ -229,22 +340,32 @@
             precoPorFoto = 3.00;
         }
 
+        // Regra de Prazos
+        if (qtd <= 5) {
+            prazoTextoGlobal = "até 24 horas";
+        } else if (qtd <= 10) {
+            prazoTextoGlobal = "até 48 horas";
+        } else if (qtd <= 20) {
+            prazoTextoGlobal = "até 3 dias";
+        } else {
+            prazoTextoGlobal = "até 1 semana";
+        }
+
+        // Atualiza a tela
         valorTotalCalculado = qtd * precoPorFoto;
-        
-        // Atualiza o texto na tela, formatando com vírgula
         document.getElementById('total-price').innerText = "Total: R$ " + valorTotalCalculado.toFixed(2).replace('.', ',');
+        document.getElementById('prazo-entrega').innerText = "Prazo de entrega: " + prazoTextoGlobal;
     }
 
-    // Função que lida com o clique de "Confirmar Pedido"
+    // Função de envio do formulário
     document.getElementById('orderForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede a página de recarregar
+        e.preventDefault(); 
         
-        // Muda o texto do botão para mostrar que está carregando
         let btn = document.getElementById('btn-confirmar');
-        btn.innerText = "Processando...";
+        btn.innerText = "Processando aguarde...";
         btn.disabled = true;
 
-        // Pegando os valores digitados
+        // Captura dados
         let nome = document.getElementById('nome').value;
         let telefone = document.getElementById('telefone').value;
         let email = document.getElementById('email').value;
@@ -252,11 +373,9 @@
         let quantidade = document.getElementById('quantidade').value;
         let totalFormatado = "R$ " + valorTotalCalculado.toFixed(2).replace('.', ',');
 
-        // 1. Enviar dados para o Google Sheets
-        // ATENÇÃO: COLOQUE A URL DO SEU GOOGLE SCRIPT ABAIXO
+        // ===== URL DO SEU GOOGLE APPS SCRIPT AQUI =====
         let urlScript = "https://script.google.com/macros/s/AKfycbw6AcHzOI3EW-zpSa2ZH-JCxg1lIpLg7blJitWJlZInfuY8reuoaqOnZgDxd7u0BO4/exec"; 
 
-        // Prepara os dados para envio
         let formData = new FormData();
         formData.append('nome', nome);
         formData.append('telefone', telefone);
@@ -264,34 +383,34 @@
         formData.append('tema', tema);
         formData.append('quantidade', quantidade);
         formData.append('total', totalFormatado);
+        // Observação: se quiser salvar o prazo na planilha futuramente, basta adicionar uma coluna lá e enviar o prazo aqui.
 
-        // Faz o envio para o Google Sheets sem bloquear a tela (no-cors)
+        // Envia para o Google Sheets
         fetch(urlScript, { method: 'POST', body: formData, mode: 'no-cors'})
         .then(() => {
-            // Dispara evento de Lead no Pixel
+            // Dispara evento do Pixel
             if(typeof fbq !== 'undefined') {
                 fbq('track', 'Lead', {value: valorTotalCalculado, currency: 'BRL'});
             }
 
-            // 2. Liberar botão do WhatsApp
-            document.getElementById('orderForm').style.display = 'none'; // Esconde o formulário
-            document.getElementById('whatsapp-section').style.display = 'block'; // Mostra a seção do Whats
+            // Esconde form e mostra WhatsApp
+            document.getElementById('orderForm').style.display = 'none';
+            document.getElementById('whatsapp-section').style.display = 'block';
             
-            // 3. Montar a mensagem do WhatsApp
-            // ATENÇÃO: COLOQUE O SEU NÚMERO ABAIXO (Apenas números com código do país, ex: 5511999999999)
+            // ===== SEU NÚMERO DE WHATSAPP AQUI (Somente números) =====
             let numeroWhats = "5588996130002"; 
             
-            let mensagem = `Olá! Meu nome é ${nome}. Acabei de fazer um pedido pelo site! %0A%0A` +
-                           `📸 Tema escolhido: ${tema} %0A` +
-                           `🔢 Quantidade: ${quantidade} foto(s) %0A` +
-                           `💰 Valor Total: ${totalFormatado} %0A%0A` +
-                           `Aqui está a foto do meu bebê para a arte:`;
+            // Mensagem SEM emojis e com quebras de linha exatas (%0A)
+            let mensagem = `Ola! Meu nome e ${nome}. Acabei de fazer um pedido pelo site.%0A%0A` +
+                           `Temas desejados: ${tema}%0A` +
+                           `Quantidade: ${quantidade} foto(s)%0A` +
+                           `Prazo combinado: ${prazoTextoGlobal}%0A%0A` +
+                           `So preciso lhe mandar as fotos do meu filho(a) e realizar o pagamento no valor de ${totalFormatado}.`;
                            
-            // Atualiza o link do botão do WhatsApp
             document.getElementById('link-whatsapp').href = `https://wa.me/${numeroWhats}?text=${mensagem}`;
         })
         .catch(error => {
-            alert("Ocorreu um erro ao enviar. Tente novamente.");
+            alert("Ocorreu um erro na conexao. Tente novamente.");
             btn.innerText = "Confirmar Pedido";
             btn.disabled = false;
         });
